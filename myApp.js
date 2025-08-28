@@ -1,7 +1,12 @@
 const express = require('express');
+const express = require('helmet');
 const app = express();
 
+const PORT = process.env.PORT || 3030;
 
+app.listen(PORT, () => {
+  console.log(`Nakura001 started on port ${PORT}`);
+});
 
 
 
