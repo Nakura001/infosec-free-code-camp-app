@@ -15,7 +15,15 @@ app.use(helmet.contentSecurityPolicy({directives: {
   defaultSrc: ["'self'"],
   scriptSrc: ["'self'", "trusted-cdn.com"]
 }}));
-
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ['style.com', 'trusted-cdn.com'],
+    }
+  },
+  dnsPrefetchControl: false  
+}))
 
 
 
